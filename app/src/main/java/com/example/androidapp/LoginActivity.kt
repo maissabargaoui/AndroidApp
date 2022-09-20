@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
 import com.google.android.material.textview.MaterialTextView
 import com.google.firebase.auth.FirebaseAuth
 import android.widget.Toast
@@ -15,9 +14,7 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var tvRedirectSignUp: MaterialTextView
     lateinit var txtEmail: TextInputEditText
-    lateinit var txtLayoutEmail: TextInputLayout
     private lateinit var txtPassword: TextInputEditText
-    lateinit var txtLayoutPassword: TextInputLayout
     lateinit var btnLogin: MaterialButton
 
     // Creating firebaseAuth object
@@ -64,10 +61,15 @@ class LoginActivity : AppCompatActivity() {
         // On successful response Display a Toast
         auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(this) {
             if (it.isSuccessful) {
-                Toast.makeText(this, "Successfully LoggedIn", Toast.LENGTH_SHORT).show()
+                navigate()
             } else
                 Toast.makeText(this, "Log In failed ", Toast.LENGTH_SHORT).show()
         }
+    }
+    private fun navigate(){
+        val mainIntent = Intent(this, MainActivity::class.java)
+        finish()
+        startActivity(mainIntent)
     }
 
 }
