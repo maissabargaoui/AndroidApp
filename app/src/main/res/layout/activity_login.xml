@@ -59,22 +59,6 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="LOGIN"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtLayoutPassword"
-        app:layout_constraintVertical_bias="0.251" />
-
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvRedirectSignUp"
         android:layout_width="371dp"
@@ -89,5 +73,31 @@
         app:layout_constraintTop_toBottomOf="@+id/btnLogin"
         app:layout_constraintVertical_bias="0.428" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="LOGIN"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forget"
+        app:layout_constraintVertical_bias="0.251" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/forget"
+        android:layout_width="200dp"
+        android:layout_height="19dp"
+        android:layout_margin="15dp"
+        android:layout_marginEnd="4dp"
+        android:text="              Forget Password ?"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLayoutPassword"
+        app:layout_constraintVertical_bias="0.067" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
