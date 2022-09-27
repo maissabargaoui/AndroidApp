@@ -12,6 +12,7 @@ import android.widget.Toast
 
 class LoginActivity : AppCompatActivity() {
 
+    private lateinit var tvforget: MaterialTextView
     private lateinit var tvRedirectSignUp: MaterialTextView
     lateinit var txtEmail: TextInputEditText
     private lateinit var txtPassword: TextInputEditText
@@ -25,14 +26,10 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        // View Binding
-        tvRedirectSignUp = findViewById(R.id.tvRedirectSignUp)
-        btnLogin = findViewById(R.id.btnLogin)
-        txtEmail = findViewById(R.id.txtEmail)
-        txtPassword = findViewById(R.id.txtPassword)
 
         // View Binding
         tvRedirectSignUp = findViewById(R.id.tvRedirectSignUp)
+        tvforget= findViewById(R.id.tvforget)
         btnLogin = findViewById(R.id.btnLogin)
         txtEmail = findViewById(R.id.txtEmail)
         txtPassword = findViewById(R.id.txtPassword)
@@ -50,8 +47,13 @@ class LoginActivity : AppCompatActivity() {
             // using finish() to end the activity
             finish()
         }
+        tvforget.setOnClickListener {
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(intent)
+            // using finish() to end the activity
+            finish()
+        }
     }
-
 
     private fun login() {
         val email = txtEmail.text.toString()
