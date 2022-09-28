@@ -207,12 +207,13 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnlogout"
         android:layout_width="148dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
         android:background="@drawable/buttonstyle"
-        android:text="Follow Me"
+        android:text="LOGOUT"
         android:textColor="#D1C4EA" />
 
 </LinearLayout>

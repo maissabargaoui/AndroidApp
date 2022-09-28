@@ -37,6 +37,9 @@ class LoginActivity : AppCompatActivity() {
         // initialising Firebase auth object
         auth = FirebaseAuth.getInstance()
 
+        //keep user logged in
+        checkIfUserIsLogged()
+
         btnLogin.setOnClickListener {
             login()
         }
@@ -52,6 +55,12 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
             // using finish() to end the activity
             finish()
+        }
+    }
+
+    private fun checkIfUserIsLogged() {
+        if (auth.currentUser != null){
+            startActivity(Intent(this, MainActivity :: class.java))
         }
     }
 

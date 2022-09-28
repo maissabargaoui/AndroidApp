@@ -1,5 +1,6 @@
 package com.example.androidapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -40,12 +41,19 @@ class MainActivity : AppCompatActivity() {
             navView.setNavigationItemSelectedListener { menuItem ->
                 when (menuItem.itemId) {
                     R.id.profile -> {
-                        Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
+
+                        val intent = Intent(this , ProfileActivity::class.java)
+                        startActivity(intent)
+
+                        //Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show()
                         true
                     }
 
                     R.id.home -> {
-                        Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this , MainActivity::class.java)
+                        startActivity(intent)
+
+                        //Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
                         true
                     }
                     else -> {
